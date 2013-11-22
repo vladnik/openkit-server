@@ -1,7 +1,7 @@
 class AddFbIdAndTwitterIdToUsers < ActiveRecord::Migration
   def up
-    add_column :users, :twitter_id, 'bigint UNSIGNED'
-    add_column :users, :fb_id, 'bigint UNSIGNED'
+    add_column :users, :twitter_id, :bigint
+    add_column :users, :fb_id, :bigint
 
     add_index :users, [:twitter_id]
     add_index :users, [:fb_id]

@@ -1,9 +1,9 @@
 class MakeScoresBigInts < ActiveRecord::Migration
   def up
-    change_column :scores, :value, 'bigint SIGNED'
-    change_column :best_scores, :value, 'bigint SIGNED'
-    change_column :best_scores_1, :value, 'bigint SIGNED'
-    change_column :best_scores_7, :value, 'bigint SIGNED'
+    change_column :scores, :value, :bigint
+    change_column :best_scores, :value, :bigint
+    change_column :best_scores_1, :value, :bigint
+    change_column :best_scores_7, :value, :bigint
   end
 
   def down

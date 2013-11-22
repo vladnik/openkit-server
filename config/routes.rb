@@ -61,7 +61,8 @@ OKDashboard::Application.routes.draw do
 
 
   scope :module => :dashboard do
-    constraints :subdomain => /^(developer|beta-developer)$/ do
+    scope '/dashboard' do
+    # constraints :subdomain => /^(developer|beta-developer)$/ do
 
       resources :change_password,         only:  [:new, :create]
       resources :password_resets,         only:  [:new, :create, :edit, :update]

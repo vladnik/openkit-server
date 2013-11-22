@@ -20,9 +20,6 @@ ActiveRecord::Schema.define(:version => 20131031154407) do
     t.datetime "created_at",     :null => false
   end
 
-  add_index "achievement_scores", ["user_id", "achievement_id"], :name => "index_achievement_progress_on_app_user_and_achievement_id"
-  add_index "achievement_scores", ["user_id"], :name => "index_achievement_progress_on_app_and_user_id"
-
   create_table "achievements", :force => true do |t|
     t.string   "name"
     t.integer  "app_id"
@@ -201,8 +198,8 @@ ActiveRecord::Schema.define(:version => 20131031154407) do
     t.datetime "meta_doc_updated_at"
   end
 
-  add_index "scores", ["leaderboard_id", "sort_value", "created_at"], :name => "index_scores_composite_1"
-  add_index "scores", ["leaderboard_id", "user_id", "sort_value", "created_at"], :name => "index_scores_composite_2"
+  add_index "scores", ["leaderboard_id", "sort_value", "created_at"], :name => "index_scores_composite_1", :order => {"sort_value"=>:desc}
+  add_index "scores", ["leaderboard_id", "user_id", "sort_value", "created_at"], :name => "index_scores_composite_2", :order => {"sort_value"=>:desc}
 
   create_table "subscriptions", :force => true do |t|
     t.integer  "app_id"

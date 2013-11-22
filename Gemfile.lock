@@ -98,7 +98,6 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.8.2)
     mustache (0.99.4)
-    mysql2 (0.3.13)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
@@ -109,6 +108,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.17.0)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
@@ -197,9 +197,9 @@ DEPENDENCIES
   json (~> 1.7)
   mocha
   mustache (~> 0.99)
-  mysql2 (~> 0.3)
   oauth (~> 0.4)
   paperclip (~> 3.3)
+  pg
   quiet_assets
   rails (~> 3.2)
   redis (~> 3.0)

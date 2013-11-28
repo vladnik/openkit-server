@@ -14,7 +14,7 @@ class TwoLeggedOAuth
 
     if env['HTTP_AUTHORIZATION'].nil?
       return @app.call(env) if request.host =~ /^(beta-)?developer/   # Rely on developer creds for dashboard access.
-      return @app.call(env) if request.path =~ /^\/dashboard|assets/  # Support accessing dashboard by namespace
+      return @app.call(env) if request.path =~ /^\/(dashboard|assets|api)/  # Support accessing dashboard by namespace
 
       # Either authorized_app is set via old API whitelist, or access denied.
       if request.host == "stage.openkit.io"

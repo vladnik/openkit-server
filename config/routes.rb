@@ -20,8 +20,8 @@ OKDashboard::Application.routes.draw do
       match "/purge_test_data",           to: "apps#purge_test_data",    via: :delete
     end
 
-    # constraints :subdomain => /^$|(?:beta-)?(?:api|sandbox|local)/ do
-    scope '/api' do
+    constraints :subdomain => /^$|(?:beta-)?(?:api|sandbox|local)/ do
+    # scope '/api' do
       namespace :v1, &default_api_routes
       scope :module => :v1, &default_api_routes
     end
@@ -62,8 +62,8 @@ OKDashboard::Application.routes.draw do
 
 
   scope :module => :dashboard do
-    scope '/dashboard' do
-    # constraints :subdomain => /^(developer|beta-developer)$/ do
+    # scope '/dashboard' do
+    constraints :subdomain => /^(developer|beta-developer)$/ do
 
       resources :change_password,         only:  [:new, :create]
       resources :password_resets,         only:  [:new, :create, :edit, :update]
